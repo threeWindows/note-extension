@@ -17,8 +17,15 @@
     "default_popup": "popup.html"
   },
   "permissions": [
-    "storage"
+    "storage",
+    "tabs",
+    "sidePanel",
+    "activeTab",
+    "downloads"
   ],
+  "side_panel": {
+    "default_path": "popup.html"
+  },
   "content_scripts": [
     {
       "matches": [

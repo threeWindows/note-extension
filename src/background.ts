@@ -17,5 +17,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     sendResponse({
       message,
     });
+  }else if(request.message == 'findH') {
+    let h2Tags = document.querySelectorAll('h2');
+
+    console.log(h2Tags);
   }
 });
