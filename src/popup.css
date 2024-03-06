@@ -35,7 +35,8 @@ header {
   align-items: center;
 }
 
-button, img {
+button,
+img {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,7 +61,7 @@ button, img {
   outline: none;
 }
 
-.newNoteContainer{
+.newNoteContainer {
   position: absolute;
   top: 0;
   left: 0;
@@ -69,11 +70,12 @@ button, img {
   background-color: rgba(21, 21, 21, 0.585);
 }
 
-.writeNoteContainer{
+.writeNoteContainer {
   margin: auto;
   width: 80%;
   height: 350px;
-  background-color: pink;
+  box-shadow: 10px 10px 10px rgb(71, 71, 71);
+  background-color: rgb(255, 255, 255);
   border-radius: 20px;
-  transform: translateY(50%);
+  margin-top: 20px;
 }
