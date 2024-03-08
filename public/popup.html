@@ -17,7 +17,7 @@
       </header>
       <section class="sort">
         <div>
-          <input type="text" id="findNote">
+          <input type="text" id="findNote" placeholder="Find Note ... ">
         </div>
         <div>
           
@@ -25,12 +25,11 @@
       </section>
     </div>
 
-    <div class="newNoteContainer">
-      <div class="writeNoteContainer">
-        <input type="text" id="noteTitle">
-        <textareaid="noteContent" cols="30" rows="10"></textarea>
-        <button>Add Note</button>
-      </div>
+    <div class="newNoteContainer "><!--closeWindow-->
+      <header>
+        <input type="text" id="title" placeholder="Title">
+      </header>
+      <textarea id="note" cols="30" rows="10" placeholder="Note"></textarea>
     </div>
 
     <script src="popup.js"></script>

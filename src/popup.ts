@@ -12,26 +12,31 @@ import './popup.css';
   // https://developer.chrome.com/extensions/declare_permissions
 
   function main() {
-    const title = document.getElementById('title') as HTMLInputElement;
-    const text = document.getElementById('text') as HTMLInputElement;
-    const save = document.getElementById('save');
 
-    save?.addEventListener('click', () => {
-      chrome.storage.local
-        .set({ title: title?.value, content: text?.value })
-        .then(() => {
-          console.log('Value is set');
-        });
+    const createNewNote = document.getElementById('createNewNote');
+    const newNoteContainer = document.getElementsByClassName('newNoteContainer');
 
-      chrome.storage.local.get(['title', 'content']).then((result) => {
-        console.log(`Title: ${result.title}\nContent: ${result.content}`);
-      });
-    });
+    createNewNote?.addEventListener('click', () => {
+      newNoteContainer[0].classList.add('openWindow');
+      newNoteContainer[0].classList.remove('closeWindow');
+      chrome.runtime.sendMessage({message: 'createNewNote'});
+    })
 
-    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-      let tab = tabs[0];
-      tab.id && chrome.tabs.sendMessage(tab.id, { message: 'quickNote' });
-    });
+    // const title = document.getElementById('title') as HTMLInputElement;
+    // const text = document.getElementById('text') as HTMLInputElement;
+    // const save = document.getElementById('save');
+
+    // save?.addEventListener('click', () => {
+    //   chrome.storage.local
+    //     .set({ title: title?.value, content: text?.value })
+    //     .then(() => {
+    //       console.log('Value is set');
+    //     });
+
+    //   chrome.storage.local.get(['title', 'content']).then((result) => {
+    //     console.log(`Title: ${result.title}\nContent: ${result.content}`);
+    //   });
+    // });
   }
 
   document.addEventListener('DOMContentLoaded', main); //restoreCounter;
