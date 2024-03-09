@@ -16,19 +16,42 @@
         </button>  
       </header>
       <section class="sort">
-        <div>
+        <div class="findNoteCont">
           <input type="text" id="findNote" placeholder="Find Note ... ">
         </div>
-        <div>
-          
+        <div class="typeOfNote">
+          <ul>
+            <li>Notes</li>
+            <li>Quick Notes</li>
+          </ul>          
         </div>
       </section>
+      <main>
+        <div class="note">
+          <h3>Title</h3>
+          <span>To jest moja przykładowa nowa notatka to jest moja przykładowa nowa notatka to jest moja przykładowa nowa notatka</span>
+        </div>
+        <div class="note">
+          <h3>Title</h3>
+          <span>To jest moja przykładowa nowa notatka to jest moja przykładowa nowa notatka to jest moja przykładowa nowa notatka</span>
+        </div>
+        <div class="note">
+          <h3>Title</h3>
+          <span>To jest moja przykładowa nowa notatka to jest moja przykładowa nowa notatka to jest moja przykładowa nowa notatka</span>
+        </div>
+      </main>
     </div>
 
-    <div class="newNoteContainer "><!--closeWindow-->
+    <div class="newNoteContainer">
       <header>
-        <input type="text" id="title" placeholder="Title">
+        <button>
+          <img src="icons/pngwing.com.png" id="leftNote">
+        </button>
+        <button>
+          Save
+        </button>  
       </header>
+      <input type="text" id="title" placeholder="Title">
       <textarea id="note" cols="30" rows="10" placeholder="Note"></textarea>
     </div>
 

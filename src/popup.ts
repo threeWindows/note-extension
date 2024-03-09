@@ -16,6 +16,18 @@ import './popup.css';
     const createNewNote = document.getElementById('createNewNote');
     const newNoteContainer = document.getElementsByClassName('newNoteContainer');
 
+    const shorterNote = document.querySelectorAll('.note span');
+
+    shorterNote.forEach(shNote => {
+      let text = shNote.textContent;
+      if(text) {
+        if(text.length >= 110) {
+          text = text.substring(0, 110) + '...';
+          shNote.textContent = text;
+        }
+      }
+    })
+
     createNewNote?.addEventListener('click', () => {
       newNoteContainer[0].classList.add('openWindow');
       newNoteContainer[0].classList.remove('closeWindow');
