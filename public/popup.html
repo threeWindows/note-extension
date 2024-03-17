@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="popup.css" />
   </head>
   <body>
+
     <div class="app">
       <header>
         <button>
@@ -26,11 +27,7 @@
           </ul>          
         </div>
       </section>
-      <main>
-        <div class="note">
-          <h3>Title</h3>
-          <span>To jest moja przykładowa nowa notatka to jest moja przykładowa nowa notatka to jest moja przykładowa nowa notatka</span>
-        </div>
+      <main id="appMain">
         <div class="note">
           <h3>Title</h3>
           <span>To jest moja przykładowa nowa notatka to jest moja przykładowa nowa notatka to jest moja przykładowa nowa notatka</span>
@@ -48,11 +45,15 @@
           <img src="icons/pngwing.com.png" id="leftNote">
         </button>
         <button>
-          Save
+          <img src="icons/2639912_save_icon.png" id="save">
         </button>  
       </header>
-      <input type="text" id="title" placeholder="Title">
-      <textarea id="note" cols="30" rows="10" placeholder="Note"></textarea>
+      <main style="padding: 5px;">
+        <input type="text" id="title" placeholder="Title">
+        <select id="selectHeader">
+        </select>
+        <textarea id="note" cols="80" rows="10" placeholder="Note"></textarea>
+      </main>
     </div>
 
     <script src="popup.js"></script>

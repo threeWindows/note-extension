@@ -1,25 +1,26 @@
 'use strict';
 
-// With background scripts you can communicate with popup
-// and contentScript files.
-// For more information on background script,
-// See https://developer.chrome.com/extensions/background_pages
+class note {
+  title: string;
+  content: string;
+  header: string;
 
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (request.type === 'GREETINGS') {
-    const message: string = `Hi ${
-      sender.tab ? 'Con' : 'Pop'
-    }, my name is Bac. I am from Background. It's great to hear from you.`;
+  constructor(title: string, content: string, header: string = 'All Notes') {
+    this.title = title;
+    this.content = content;
+    this.header = header;
+  }
+}
 
-    // Log message coming from the `request` parameter
-    console.log(request.payload.message);
-    // Send a response message
-    sendResponse({
-      message,
-    });
-  }else if(request.message == 'findH') {
-    let h2Tags = document.querySelectorAll('h2');
+chrome.runtime.onMessage.addListener((request) => {
+  const {message, noteTitle, noteText, noteHeader} = request;
 
-    console.log(h2Tags);
+  if(message == "saveNote") {
+    const newNote:note = new note(noteTitle, noteText, noteHeader);
+
+    console.log(newNote);
+
+    chrome.storage.local.set({ "note": newNote });
   }
 });
+
